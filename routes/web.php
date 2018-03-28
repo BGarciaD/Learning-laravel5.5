@@ -29,9 +29,14 @@ Route::get('/users/new', function() {
 });
 
 Route::get('/greeting/{name}/{nickname?}', function($name, $nickname = null) {
+    $name = ucfirst($name);
     if($nickname){
         return "Welcome {$name}, you nickname will be {$nickname}";
     } else {
         return "Welcome {$name}, you didn't choose a nickname";
     }
 });
+
+Route::get('/users/{id}/edit', function($id) {
+    return "Editing user with id: $id";
+})->where('id', '\d+');
