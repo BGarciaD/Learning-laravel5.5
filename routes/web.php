@@ -16,14 +16,22 @@ Route::get('/', function () {
     return 'Home';
 });
 
-Route::get('/usuarios', function() {
-    return 'Usuarios';
+Route::get('/users', function() {
+    return 'Users';
 });
 
-Route::get('/usuarios/{id}', function($id) {
-    return "Mostrando detalle del usuario: {$id}";
-})->where('id', '[0-9]+');
+Route::get('/users/{id}', function($id) {
+    return "Showing user's details: {$id}";
+})->where('id', '\d+');
 
-Route::get('/usuarios/nuevo', function() {
-    return 'Crear nuevo usuario';
+Route::get('/users/new', function() {
+    return 'Creating new user';
+});
+
+Route::get('/greeting/{name}/{nickname?}', function($name, $nickname = null) {
+    if($nickname){
+        return "Welcome {$name}, you nickname will be {$nickname}";
+    } else {
+        return "Welcome {$name}, you didn't choose a nickname";
+    }
 });
