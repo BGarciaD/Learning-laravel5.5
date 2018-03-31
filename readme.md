@@ -1,3 +1,7 @@
+## About this Project
+
+This is a project based on a laravel 5.5 tutorial I'm doing at the moment. Not a tutorial itself explaining Laravel.
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
