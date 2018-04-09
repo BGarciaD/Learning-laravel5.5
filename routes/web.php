@@ -18,12 +18,14 @@ Route::get('/', function () {
 
 Route::get('/users', 'UserController@index');
 
-Route::get('/users/{id}', 'UserController@show')->where('id', '\d+');
+Route::get('/users/{id}', 'UserController@showUserDetails')->where('id', '\d+');
 
-Route::get('/users/new', 'UserController@create');
+Route::get('/users/new', 'UserController@createUser');
+
+Route::get('/users/{id}/edit', 'UserController@edit')->where('id', '\d+');
 
 Route::get('/greeting/{name}/{nickname}', 'WelcomeUserController@index1');
 
 Route::get('/greeting/{name}', 'WelcomeUserController@index2');
 
-Route::get('/users/{id}/edit', 'UserController@edit')->where('id', '\d+');
+

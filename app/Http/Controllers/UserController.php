@@ -8,47 +8,33 @@ class UserController extends Controller
 {
     public function index() 
     {
-        $users = [
-            'Tom',
-            'Jerry',
-            'Michael',
-            'Johnny',
-            'Alfredo',
-            '<script>alert("TONTO");</script>'
-        ];
+        if (request()->has('empty')){
+            $users = [];
+        } else{
+            $users = ['Tom', 'Jerry', 'Michael', 'Johnny', 'Alfredo'];
+        }
+        
         $title = 'Users List';
 
-        /*return view('users', [
-            'users' => $users,
-            'title' => $title 
-        ]);
-        
-        Other ways to pass props   
-        return view('users')->with([
-            'users' => $users,
-            'title' => $title
-        ]);
-        return view('users')
-            ->with('users', $users)
-            ->with('title', $title);
-
-        A way to check we are sending the array we want    
-        dd(compact('title', 'users'));*/
         return view('users', compact('title', 'users'));   
     }
 
-    public function show($id)
+    public function showUserDetails($id)
     {
-        return "Showing user's details: {$id}";
+        $user = array("id" => $id, "name" => "Max", "lastName" => "Power", "age" => "45", "height" => '1,75m', "city" => "Springfield" );
+        return view('showUserDetails', compact('user'));
     }
 
-    public function create()
+    public function createUser()
     {
-        return 'Creating new user';
+        $user = array("id" => "5", "name" => "Max", "lastName" => "Power", "age" => "45", "height" => '1,75m', "city" => "Springfield" );
+        return view('createUser', compact('user'));
     }
 
     public function edit($id)
     {
-        return "Editing user with id: $id";
+        //Normally you'd get data from DB by ID
+        $user = array("id" => "5", "name" => "Max", "lastName" => "Power", "age" => "45", "height" => '1,75m', "city" => "Springfield" );
+        return view('editUser', compact('user'));
     }
 }

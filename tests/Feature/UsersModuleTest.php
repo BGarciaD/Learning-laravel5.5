@@ -12,7 +12,7 @@ class UsersModuleTest extends TestCase
      * @test
      * @return void
      */
-    function users()
+    function showingUsers()
     {
         $this->get('/users')
             ->assertStatus(200)
@@ -25,10 +25,22 @@ class UsersModuleTest extends TestCase
      * @test
      * @return void
      */
+    function defaultMessageWhenNoUsers()
+    {
+        $this->get('/users?empty')
+            ->assertStatus(200)
+            ->assertSee('No registered users');
+    }
+
+    /**
+     * @test
+     * @return void
+     */
     function usersDetails()
     {
         $this->get('/users/5')
             ->assertStatus(200)
+            ->assertSee('User\'s Details')
             ->assertSee('Showing user\'s details: 5');
     }
 
@@ -40,7 +52,8 @@ class UsersModuleTest extends TestCase
     {
         $this->get('/users/new')
             ->assertStatus(200)
-            ->assertSee('Creating new user');
+            ->assertSee('User\'s Data')
+            ->assertSee('name : Max');
     }
 
     /**
@@ -51,6 +64,9 @@ class UsersModuleTest extends TestCase
     {
         $this->get('/users/5/edit')
             ->assertStatus(200)
-            ->assertSee('Editing user with id: 5');
+            ->assertSee('Editing User')
+            ->assertSee('User\'s Data')
+            ->assertSee('Name:')
+            ->assertSee('Max');
     }
 }
