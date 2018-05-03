@@ -2,6 +2,8 @@
 
 This is a project based on a laravel 5.5 tutorial I'm doing at the moment. Not a tutorial itself explaining Laravel.
 
+Ths is the tutorial https://styde.net/laravel-5/ (spanish)
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
