@@ -2,7 +2,7 @@
 
 This is a project based on a laravel 5.5 tutorial I'm doing at the moment. Not a tutorial itself explaining Laravel.
 
-This is the tutorial https://styde.net/laravel-5/ (spanish)
+This is the tutorial I'm following https://styde.net/laravel-5/ (spanish)
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
@@ -63,3 +63,15 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Lessons
+
+<div>
+    <h5>Migrations</h5>
+    <ul>
+        <li>php artisan make:migration [migration_name] => Create a migration (Laravel adds a timestamp on the name)</li>
+        <li>php artisan migrate => Run migrations (Those migrations can't be run again with this command)</li>
+        <li>php artisan migrate:reset => Run migrations again but deleting tables content</li>
+        <li>php artisan migrate:rollback => Undo last batch of migrations and whatever these migrations did on the tables</li>
+    </ul>
+</div>
