@@ -66,12 +66,26 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Lessons
 
+## Lesson 10
+
 <div>
     <h5>Migrations</h5>
     <ul>
-        <li>php artisan make:migration [migration_name] => Create a migration (Laravel adds a timestamp on the name)</li>
+        <li>php artisan make:migration [migration_name] => Creates an empty migration (Laravel adds a timestamp on the name)</li>
         <li>php artisan migrate => Run migrations (Those migrations can't be run again with this command)</li>
-        <li>php artisan migrate:reset => Run migrations again but deleting tables content</li>
-        <li>php artisan migrate:rollback => Undo last batch of migrations and whatever these migrations did on the tables</li>
+        <li>php artisan migrate:rollback => Rollback the last batch of migrations</li>
+        <li>php artisan migrate:reset => Runs a rollback for all migrations</li>
+        <li>php artisan migrate:refresh => Runs a reset and then a migrate</li>
+    </ul>
+</div>
+
+## Lesson 11
+
+<div>
+    <h5>Creatig tables and associations with migrations and foreign keys</h5>
+    <ul>
+        <li>php artisan make:migration [create_name_table] => Creates a migration with an id and timestamp field </li>
+        <li>$table->foreign('foreign_key')->references('id')->on('id_table') => Creates a foreign key oon the designated table ofr the designated field</li>
+        <li>php artisan migrate:fresh => Will drop all tables from the database and then execute migrate</li>
     </ul>
 </div>
