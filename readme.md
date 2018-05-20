@@ -66,6 +66,27 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Lessons
 
+## Lesson 8
+
+<div>
+    <h5>Layouts with Blade</h5>
+    <ul>
+        <li>@include('file_name') => Directive used to import the code of a file passing the name of the file </li>
+        <li>@yield('section_name') => Directive used to import code from a section of a file wrapped by the @section and @endsection</li>
+        <li>@section('section_name') / @endsection => Directives used to create a section wich will be imported later with @yield</li>
+        <li>@extends => Directive necessary to import sections with @yield. It is used in those files where you have declared sections with @section</li>
+    </ul>
+</div>
+
+## Lesson 9 
+
+<div>
+    <h5>Introduction to Data Bases with Laravel</h5>
+    <ul>
+        <li>php artisan migrate => Executes all migrations</li>
+    </ul>
+</div>
+
 ## Lesson 10
 
 <div>
@@ -87,5 +108,20 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>php artisan make:migration [create_name_table] => Creates a migration with an id and timestamp field </li>
         <li>$table->foreign('foreign_key')->references('id')->on('id_table') => Creates a foreign key oon the designated table ofr the designated field</li>
         <li>php artisan migrate:fresh => Will drop all tables from the database and then execute migrate</li>
+    </ul>
+</div>
+
+## Lesson 12
+
+<div>
+    <h5>Inserting data with Seeders</h5>
+    <ul>
+        <li>php artisna make:seeder seeder_name => Creates the initial structure for a seeder</li>
+        <li>use Illuminate\Support\Facades\DB; => Needed in order to use DB</li>
+        <li>DB::table('table_name')->insert([ 'key' => 'value', ]) => Directive to insert an associative array of data</li>
+        <li>$this->call(ProfessionSeeder::class) => Add this call in DatabaseSeeder run method in order to call the seed with db:seed command</li>
+        <li>php artisan db:seed => Command to execute seeds</li>
+        <li>DB::table('table_name')->truncate(); => If we want to delete data from a table but without deleting the table use truncate method</li>
+        <li>DB::statements('SET FOREIGN_KEY_CHECKS = 0'); => If you want to truncate a table with a foreign key first you can disable the foreign key and restore it again after the truncate => DB::statements('SET FOREIGN_KEY_CHECKS = 1'); | This code can be placed in every seed OR can be placed in DatabaseSeeder once</li>
     </ul>
 </div>
