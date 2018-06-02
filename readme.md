@@ -66,12 +66,30 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Lessons
 
+## Lesson 7
+
+<div>
+    <h5>Templates with Blade</h5>
+    <ul>
+        <li>{{$variable}} => Use {{}} to print variables</li>
+        <li>@directive => Blade directives are written with @ at the beggining</li>
+        <li>@foreach($variable in $variables)...@endforeach => Use @foreach and @endforeach to loop over data</li>
+        <li>@forelse()$varaible in $variables)...@empty...@endforelse => Use @forelse, @empty and @endforelse to give a default result in case the variable is empty</li>
+        <li>@for($variable = something; $varriable condition; $varriable increment or decrement)...@endfor => Use @for and @endfor to loop over data</li>
+        <li>@if(condition)...@endif => Use @if and @endif for conditional sentences</li>
+        <li>@if(condition)...@else...@endif => Use @if, @else and @endif for conditional sentences</li>
+        <li>@if(condition)...@elseif...@else...@endif => Use @if, @elseif, @else and @endif for conditional sentences</li>
+        <li>@unless(condition)...@else...@endunless => Use @unless, @else and @endunless for inverted conditional sentences</li>
+        <li>@empty($variable)...@else...@endempty => Use @empty, @else and @endempty for conditional sentences when checking If a variable is empty. @empty($variable) is a shorthand for @if(empty($variable))</li>
+    </ul>
+</div>
+
 ## Lesson 8
 
 <div>
     <h5>Layouts with Blade</h5>
     <ul>
-        <li>@include('file_name') => Directive used to import the code of a file passing the name of the file </li>
+        <li>@include('file_name') => Directive used to import the code of a file passing the name of the file</li>
         <li>@yield('section_name') => Directive used to import code from a section of a file wrapped by the @section and @endsection</li>
         <li>@section('section_name') / @endsection => Directives used to create a section wich will be imported later with @yield</li>
         <li>@extends => Directive necessary to import sections with @yield. It is used in those files where you have declared sections with @section</li>
@@ -123,5 +141,25 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>php artisan db:seed => Command to execute seeds</li>
         <li>DB::table('table_name')->truncate(); => If we want to delete data from a table but without deleting the table use truncate method</li>
         <li>DB::statements('SET FOREIGN_KEY_CHECKS = 0'); => If you want to truncate a table with a foreign key first you can disable the foreign key and restore it again after the truncate => DB::statements('SET FOREIGN_KEY_CHECKS = 1'); | This code can be placed in every seed OR can be placed in DatabaseSeeder once</li>
+    </ul>
+</div>
+
+## Lesson 13
+
+<div>
+    <h5>SQL query builder</h5>
+    <ul>
+        <li>DB::insert('INSERT INTO table (table_cols) VALUES ("values")') => Direct SQL sentence</li>
+        <li>DB::insert('INSERT INTO table (table_cols) VALUES (?)', ['values']) => Direct SQL sentence protected from SQL Injections</li>
+        <li>DB::insert('INSERT INTO table (table_cols) VALUES (:key)', ['key' => 'value']) => Direct SQL sentence protected from SQL Injections with parameter substitution</li>
+        <li>DB::select('SELECT value FROM table WHERE key = value') => Select sentence</li>
+        <li>DB::table('table_name')->select('col_name')=> Select sentence with Laravel Query Builder</li>
+        <li>DB::table('table_name')->select('col_name')->take(1)=> Select sentence with Laravel Query Builder taking one record</li>
+        <li>DB::table('table_name')->select('col_name')->first()=> Select sentence with Laravel Query Builder taking the first record</li>
+        <li>DB::table('table_name')->select('col_name')->where('key', 'operator', 'value')=> Select sentence with Laravel Query Builder using where clause</li>
+        <li>DB::table('table_name')->select('col_name')->where('key', 'value') => Select sentence with Laravel Query Builder using where clause</li>
+        <li>DB::table('table_name')->select('col_name')->where(['key' => 'value'])=> Select sentence with Laravel Query Builder using where clause treating data as an associative array</li>
+        <li>DB::table('table_name')->select('col_name')->whereKeyname('value') => Select sentence with Laravel Query Builder using where clause including the key name</li>
+        <li>DB::table('table_name')->where('key', 'value')->value('key') => Select sentence with Laravel Query Builder without select clause and getting an specific value</li>
     </ul>
 </div>
