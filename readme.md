@@ -171,5 +171,11 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     <ul>
     <li>php artisan make:model [ModelName] => Command to create a model. By convention, the "snake case", plural name of the class will be used as the table name unless another name is explicitly specified. So, in this case, Eloquent will assume the Flight model stores records in the flights table</li>
     <li>App\ModelName::create([Array of fields]) => Eloquent command to insert data</li>
+    <li>use App\ModelName => Importing model</li>
+    <li>ModelName::create([Array of fields]) => Another way to insert data with Eloquent ORM if we have imported the model needed</li>
+    <li>ModelName::all() => Select all the content of the referenced table</li>
+    <li>ModelName::where(Condition) => Select with Eloquent. The where method doesn't exist in the class Model but Laravel works with magic methods that will find the where method</li>
+    <li>protected $table = 'table_name'; => Used inside a model if we want to use a Model with a name different than the table name.</li>
+    <li>public $timestamp = false; => Used inside the model to avoid loading created at and updated at data into the table after commenting the timestamps method at the migration</li>
     </ul>
 </div>
