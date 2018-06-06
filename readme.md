@@ -163,3 +163,13 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>DB::table('table_name')->where('key', 'value')->value('key') => Select sentence with Laravel Query Builder without select clause and getting an specific value</li>
     </ul>
 </div>
+
+## Lesson 14
+
+<div>
+    <h5>Introduction to ORM Eloquent</h5>
+    <ul>
+    <li>php artisan make:model [ModelName] => Command to create a model. By convention, the "snake case", plural name of the class will be used as the table name unless another name is explicitly specified. So, in this case, Eloquent will assume the Flight model stores records in the flights table</li>
+    <li>App\ModelName::create([Array of fields]) => Eloquent command to insert data</li>
+    </ul>
+</div>
