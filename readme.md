@@ -66,6 +66,20 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Lessons
 
+##Lesson 6
+
+<div>
+    <h5>Views with Laravel</h5>
+    <ul>
+        <li>resources/views => That's the locations of the views. In order to create one you can just create a file manually with the extension .php (or .blade.php)</li>
+        <li>return view('view_name') => In order to return a view from a controller we have to use the view helper and include the name of the view (no need to include the extension). The name of the view is relative to the view folder</li>
+        <li>return view('view_name', ['key' => 'variable']) => If we want to send a variable to the view we can pass it as a second argument as an associative array</li>
+        <li>return view('view_name')->with([associative_array]) => Another way to pass variables to a view. It is possible to concatenate ->with() sending the variables seperately</li>
+        <li>return view('view_name', compact('variable_name',...)) => Another way to send an associative array is by using the helper compact. Compact will transform everything inside the parenthesis into an associative array</li>
+        <li>e($variable) => e is a helper to escape a variable. This way we make sure no inserted code is executed</li>
+    </ul>
+</div>
+
 ## Lesson 7
 
 <div>
@@ -200,5 +214,19 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>$varaible->where('key', 'value') or $variable = Class::where('key', 'value') => Using where with tinker console</li>
         <li>Class::find(id) => Using find we can find records. The value inside the find method is the value of the id of the table</li>
         <li>$variable->method_name => We can call a class method from the tinker console. This method can be static or not</li>
+    </ul>
+</div>
+
+## Lesson 16
+
+<div>
+    <h5>Managing attributes with Eloquent ORM</h5>
+    <ul>
+        <li>protected $fillable[Array of Columns] => With this attribute set at our Models we can avoid the massive assingment problem telling laravel what columns of our table will be assinged using an array of data</li>
+        <li>$class_object->attribute_name => Command to read an attribute</li>
+        <li>$class_object->attribute_name = value => Assinging a single attribute</li>
+        <li>$class_object->save(); => This command is used to save data. It can't be used with the class itself, it must be used with objects of a class</li>
+        <li>$class_object->exists => This directive shows If the record exists or not. This is used by Eloquent internally to decide whether to execute an update or an insert</li>
+        <li>$class_object->delete(); => This will delete the record from the DB</li>
     </ul>
 </div>
