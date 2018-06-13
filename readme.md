@@ -179,3 +179,26 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     <li>public $timestamp = false; => Used inside the model to avoid loading created at and updated at data into the table after commenting the timestamps method at the migration</li>
     </ul>
 </div>
+
+## Lesson 15
+
+<div>
+    <h5>Using Eloquent ORM with Tinker</h5>
+    <ul>
+        <li>php artisan tinker => Command to use the command console. We can interact with classes and methods with this console</li>
+        <li>[path_to_class]::all(); => Inside the tinker console this command shows the selected class data</li>
+        <li>exit => Using exit we exit the tinker console</li>
+        <li>use [path_to_class]; => With this command we can import the class and now we don't need to use the path when using the directive all()</li>
+        <li>[class_name]::get(); => We can also use get method to show all data</li>
+        <li>$variable = [class]::all(); => We can declare variables and show its content just printing $variable;</li>
+        <li>$variable->first() => Get first record from the array of data</li>
+        <li>$variable->last() => Get the last record from the array of data</li>
+        <li>$variable->random(1) => Get one random record from the array of data. We can set the number of records we want to get randomly</li>
+        <li>$variable->pluck('column_name'); => Get all the records from the named column</li>
+        <li>https://laravel.com/docs/5.5/eloquent-collections#available-methods => All methods for eloquent collections</li>
+        <li>Collection(['value', 'value', 'value']) => Creates a collection</li>
+        <li>$varaible->where('key', 'value') or $variable = Class::where('key', 'value') => Using where with tinker console</li>
+        <li>Class::find(id) => Using find we can find records. The value inside the find method is the value of the id of the table</li>
+        <li>$variable->method_name => We can call a class method from the tinker console. This method can be static or not</li>
+    </ul>
+</div>
