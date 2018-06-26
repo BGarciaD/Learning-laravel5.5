@@ -42,4 +42,9 @@ class User extends Authenticatable
         // return User::where(compact('email'))->first();
         return static::where(compact('email'))->first();
     }
+
+    public function profession() 
+    {
+        return $this->belongsTo(Profession::class);
+    }
 }

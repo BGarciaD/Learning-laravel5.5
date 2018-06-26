@@ -230,3 +230,14 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>$class_object->delete(); => This will delete the record from the DB</li>
     </ul>
 </div>
+
+## Lesson 17
+
+<div>
+    <h5>Relations with Eloquent ORM</h5>
+    <ul>
+        <li>Class::where('column_name', value) => Getting data related to another class</li>
+        <li>public function [class_name]() { return $this->belongsTo([class_name]::class)} => Withi this method we are relating this class with another one. By default Eloquent determines the name of the foreign key with the name of the method followed by _id</li>
+        <li>public function [class_name]() { return $this->belongsTo([class_name]::class, 'column_name')} => If the foreign key is not called [class_name]_id then we can pass the name of the foreign key as parameter </li>
+    </ul>
+</div>
