@@ -34,7 +34,22 @@ class UserSeeder extends Seeder
             //'profession_id' => $profession[0]->id
             //'profession_id' => $profession->first()->id
             //'profession_id' => $profession->id
+            'profession_id' => $profession,
+            'is_admin' => true
+        ]);
+
+        User::create([
+            'name' => 'Armando Chiquilicuatre',
+            'email' => 'fuckingmasteroftheuniverse2@god.com',
+            'password' => bcrypt('laravel'),
             'profession_id' => $profession
+        ]);
+
+        User::create([
+            'name' => 'Hernesto Chiquilicuatre',
+            'email' => 'fuckingmasteroftheuniverse3@god.com',
+            'password' => bcrypt('laravel'),
+            'profession_id' => null
         ]);
     }
 }

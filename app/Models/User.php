@@ -33,7 +33,7 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        return $this->email === 'fuckingmasteroftheuniverse@god.com';
+        return $this->is_admin;
     }
 
     public static function findByEmail($email)
