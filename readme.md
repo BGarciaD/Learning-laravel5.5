@@ -238,6 +238,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     <ul>
         <li>Class::where('column_name', value) => Getting data related to another class</li>
         <li>public function [class_name]() { return $this->belongsTo([class_name]::class)} => Withi this method we are relating this class with another one. By default Eloquent determines the name of the foreign key with the name of the method followed by _id</li>
-        <li>public function [class_name]() { return $this->belongsTo([class_name]::class, 'column_name')} => If the foreign key is not called [class_name]_id then we can pass the name of the foreign key as parameter </li>
+        <li>public function [class_name]() { return $this->belongsTo([class_name]::class, 'column_name')} => If the foreign key is not called [class_name]_id then we can pass the name of the foreign key as parameter. Calling this method will return a model object </li>
+        <li>public function [class_name]() { return $this->belongsTo([class_name]::class, 'child_column_name', 'parent_column_name')} => If the parent class primary key is not called 'id' then we can specify with a third parameter (parent_colum_name) the name of the primary key. </li>
+        <li>public function [plural_class_name]() { return $this->hasMany([class_name]::class) } => Method to relate two class models in a one to many relationship. Calling this method will return a collection</li>
     </ul>
 </div>
