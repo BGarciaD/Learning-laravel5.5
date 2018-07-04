@@ -258,5 +258,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>php artisan make:factory FactoryName => We can create factories with this Laravel command</li>
         <li>'key' => $faker->faker_type => This way we can specify the type of data Faker will generate inside the function of the factory file</li>
         <li>php artisan make:factory FactoryName --model=ModelName</li>
+        <li>php artisan make:model ModelName -mf => This command allows us to create a model, a migration and a factory at once</li>
     </ul>
 </div>
