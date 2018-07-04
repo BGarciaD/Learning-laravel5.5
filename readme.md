@@ -254,5 +254,9 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>factory(Class_Name::class)->create() => This command creates a random registry for the class selected using tinker</li>
         <li>factory(Class_Name::class)->create(['key' => 'value', ...]) => We can pass some values we want to overwrite or values that the factory doesn't generate</li>
         <li>factory(Class_Name::class, Number)->create() => We can create an specific number of registries passing a number to the factory function</li>
+        <li>factory(Class_Name::class)->times(Number)->create() => Another way to create multiple registries</li>
+        <li>php artisan make:factory FactoryName => We can create factories with this Laravel command</li>
+        <li>'key' => $faker->faker_type => This way we can specify the type of data Faker will generate inside the function of the factory file</li>
+        <li>php artisan make:factory FactoryName --model=ModelName</li>
     </ul>
 </div>

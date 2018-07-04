@@ -28,7 +28,10 @@ class ProfessionSeeder extends Seeder
         Profession::create([
             'title' => 'Full-Stack Developer',
         ]);
+
+        factory(Profession::class)->times(5)->create();
         /*
+        Alternative way to create data
         DB::table('professions')->insert([
             'title' => 'Front-End Developer',
         ]);
