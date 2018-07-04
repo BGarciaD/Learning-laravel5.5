@@ -38,18 +38,10 @@ class UserSeeder extends Seeder
             'is_admin' => true
         ]);
 
-        User::create([
-            'name' => 'Armando Chiquilicuatre',
-            'email' => 'fuckingmasteroftheuniverse2@god.com',
-            'password' => bcrypt('laravel'),
+        factory(User::class)->create([
             'profession_id' => $profession
         ]);
 
-        User::create([
-            'name' => 'Hernesto Chiquilicuatre',
-            'email' => 'fuckingmasteroftheuniverse3@god.com',
-            'password' => bcrypt('laravel'),
-            'profession_id' => null
-        ]);
+        factory(User::class)->create();
     }
 }

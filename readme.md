@@ -245,3 +245,14 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>Class::where([conditions])->get => This way we could get the same result without the method of the class</li>
     </ul>
 </div>
+
+## Lesson 18
+
+<div>
+    <h5>Model Factories</h5>
+    <ul>
+        <li>factory(Class_Name::class)->create() => This command creates a random registry for the class selected using tinker</li>
+        <li>factory(Class_Name::class)->create(['key' => 'value', ...]) => We can pass some values we want to overwrite or values that the factory doesn't generate</li>
+        <li>factory(Class_Name::class, Number)->create() => We can create an specific number of registries passing a number to the factory function</li>
+    </ul>
+</div>
