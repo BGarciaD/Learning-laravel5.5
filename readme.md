@@ -265,3 +265,13 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>https://github.com/fzaninotto/Faker => Faker documentation</li>
     </ul>
 </div>
+
+##Lesson 20
+
+<div>
+    <h5>Listing</h5>
+    <ul>
+        <li>$users = DB::table('users')->get() => Changing the static list of users for a dynamic list of users obtained from the DB </li>
+    </ul>
+    
+</div>

@@ -42,6 +42,6 @@ class UserSeeder extends Seeder
             'profession_id' => $profession
         ]);
 
-        factory(User::class)->create();
+        factory(User::class, 2)->create();
     }
 }
