@@ -54,11 +54,11 @@
             <div class="col-4">
                 @yield('content') 
             </div>
-            <div class="col-4">
+            <!--<div class="col-4">
             @section('sidebar')
                 <h2>Sidebar</h2>
             @show
-            </div>
+            </div>-->
         </div>
          
     </main>
