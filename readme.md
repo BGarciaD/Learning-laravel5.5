@@ -275,5 +275,14 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>$users->name => Changed the way to display the name of the users</li>
         <li>$users = User::all(); => We can also use Eloquent to get all the users. ALso if we use Eloquent and we then try to display the objects like $user in the view we wouldn't get an error because If we try to display something like a string but it's not a String Eloquent tries to convert it to a string</li>
     </ul>
-    
+</div>
+
+##Lesson 21
+
+<div>
+    <h5>Databases configuration and usage with Laravel and PHPUnit</h5>
+    <ul>
+        <li>Now we use dynamic data taken from the db our tests fails. We could use the factories to create the users our tests expects but then the test for no users would fail and If we truncate the table before doing the tests we wouldn't see any users on our web. So first we create a secondary database just for tests. In my case is called "laravel_tutorial_test"</li>
+        <li></li>
+    </ul>
 </div>
