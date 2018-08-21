@@ -3,10 +3,10 @@
 @section('content')
 <h1>{{ $title }}</h1>
         <hr>
-        @if (! empty($users))
+        @if ($users->isNotEmpty())
             <ul>
                 @foreach($users as $user)
-                    <li>{{ $user->name }} - {{ $user->email }}</li>
+                    <li>{{$user->name}} - {{$user->email}}</li>
                 @endforeach
             </ul>
         @else

@@ -282,7 +282,11 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 <div>
     <h5>Databases configuration and usage with Laravel and PHPUnit</h5>
     <ul>
-        <li>Now we use dynamic data taken from the db our tests fails. We could use the factories to create the users our tests expects but then the test for no users would fail and If we truncate the table before doing the tests we wouldn't see any users on our web. So first we create a secondary database just for tests. In my case is called "laravel_tutorial_test"</li>
-        <li></li>
+        <li>Now  our tests fails because we use dynamic data taken from the db. We could use the factories to create the users our tests expects but then the test for no users would fail and If we truncate the table before doing the tests we wouldn't see any users on our web. So first we create a secondary database just for tests. In my case is called "laravel_tutorial_test"</li>
+        <li>Create a new enviroment variable in phpunit.xml => New enviroment variable pointing to a tests database so we can run the tests without affecting the production database</li>
+        <li>use RefreshDatabase => A statement used in the tests class in order to create transactions when testing that will roll back at the end there for it is not necessary to truncate the test for no users</li>
     </ul>
 </div>
+
+## How to use Phpmyadmin in a remote computer
+https://stackoverflow.com/questions/16801573/how-to-access-remote-server-with-local-phpmyadmin-client
