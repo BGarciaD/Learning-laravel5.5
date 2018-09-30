@@ -4,14 +4,10 @@
 
 @section('content')
     <h1>User's Details</h1>
-        <p>Showing user's details: {{ $user['id'] }}</p>
+        <p>Showing {{ $user->name }}'s details</p>
         @if (! empty($user))
             <ul>
-                @foreach($user as $key => $value)
-                    @if ($key !== 'id')
-                        <li>{{ $key . ' : ' . $value }}</li>
-                    @endif
-                @endforeach
+                <li>Id: {{$user->id}}</li>
             </ul>
         @else
             <p>No data available</p>

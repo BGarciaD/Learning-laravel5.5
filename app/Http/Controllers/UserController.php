@@ -38,7 +38,7 @@ class UserController extends Controller
 
     public function showUserDetails($id)
     {
-        $user = array("id" => $id, "name" => "Max", "lastName" => "Power", "age" => "45", "height" => '1,75m', "city" => "Springfield" );
+        $user = User::find($id);
         return view('users.showDetails', compact('user'));
     }
 

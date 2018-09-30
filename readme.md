@@ -288,5 +288,14 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     </ul>
 </div>
 
+##Lesson 22
+
+<div>
+    <h5>Details or Users profile</h5>
+    <ul>
+        <li>Users::find($id) => Find is an eloquent method that finds an specific register by its ID</li>
+    </ul>
+</div>
+
 ## How to use Phpmyadmin in a remote computer
 https://stackoverflow.com/questions/16801573/how-to-access-remote-server-with-local-phpmyadmin-client
