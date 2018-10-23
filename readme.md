@@ -297,5 +297,14 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     </ul>
 </div>
 
+##Lesson 23
+
+<div>
+    <h5>Generating URL's in Laravel</h5>
+    <ul>
+        <li>href="{{ url('/users/' . $user->id) }}" => With the Laravel helper url we can create links to different parts of our web</li>
+    </ul>
+</div>
+
 ## How to use Phpmyadmin in a remote computer
 https://stackoverflow.com/questions/16801573/how-to-access-remote-server-with-local-phpmyadmin-client

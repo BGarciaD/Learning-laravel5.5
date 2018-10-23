@@ -6,7 +6,11 @@
         @if ($users->isNotEmpty())
             <ul>
                 @foreach($users as $user)
-                    <li>{{$user->name}} - {{$user->email}}</li>
+                    <li>
+                        {{$user->name}} - {{$user->email}}
+                        <a href="{{ url('/users/' . $user->id) }}">Ver detalles</a>
+                    </li>
+                     
                 @endforeach
             </ul>
         @else

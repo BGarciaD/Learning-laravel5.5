@@ -51,7 +51,7 @@
     <!-- yield directive will import a content made in other views wich will be extended -->
     <main role="main" class="container">
         <div class="row mt-3">
-            <div class="col-4">
+            <div class="col-8">
                 @yield('content') 
             </div>
             <!--<div class="col-4">
