@@ -304,6 +304,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     <ul>
         <li>href="{{ url('/users/' . $user->id) }}" => With the Laravel helper url we can create links to different parts of our web</li>
         <li>href="{{ url("/users/$user->id") }}" => We can also use double quotation marks but in this case we don't need to concatenate he user's id</li>
+        <li>href="{{url()->previous()}}" => We can also use the method previous() to return to the previous page</li>
     </ul>
 </div>
 
