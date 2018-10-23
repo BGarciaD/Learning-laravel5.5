@@ -307,6 +307,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>href="{{url()->previous()}}" => We can also use the method previous() to return to the previous page</li>
         <li>href="{{ action('UserController@index') }}" => We can also use the action helper to redirect to an specific page of our web using the controller and the method names as arguments</li>
         <li>href="{{ action('UserController@showUserDetails', [ 'id' => $user->id]) }}" => In order to pass a parameter with the action helper we can use an associative array</li>
+        <li>Route::get('/users', 'UserController@index')->name('users.index'); => We can give a name to every route in order to avoid problems with the links when changing the route itseslf or changing the controller or the action</li>
+        <li>href="{{ route('users.show', [ 'id' => $user->id]) }}" => Now we can use the name of the route to redirect with our links</li>
     </ul>
 </div>
 

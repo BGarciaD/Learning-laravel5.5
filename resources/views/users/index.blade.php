@@ -8,7 +8,7 @@
                 @foreach($users as $user)
                     <li>
                         {{$user->name}} - {{$user->email}}
-                        <a href="{{ action('UserController@showUserDetails', [ 'id' => $user->id]) }}">Ver detalles</a>
+                        <a href="{{ route('users.show', [ 'id' => $user->id]) }}">Ver detalles</a>
                     </li>
                      
                 @endforeach

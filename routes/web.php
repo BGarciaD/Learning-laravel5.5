@@ -16,16 +16,22 @@ Route::get('/', function () {
     return 'Home';
 });
 
-Route::get('/users', 'UserController@index');
+Route::get('/users', 'UserController@index')
+    ->name('users.index');
 
-Route::get('/users/{id}', 'UserController@showUserDetails')->where('id', '\d+');
+Route::get('/users/{id}', 'UserController@showUserDetails')->where('id', '\d+')
+    ->name('users.show');
 
-Route::get('/users/new', 'UserController@createUser');
+Route::get('/users/new', 'UserController@createUser')
+    ->name('users.create');
 
-Route::get('/users/{id}/edit', 'UserController@edit')->where('id', '\d+');
+Route::get('/users/{id}/edit', 'UserController@edit')->where('id', '\d+')
+    ->name('users.edit');
 
-Route::get('/greeting/{name}/{nickname}', 'WelcomeUserController@index1');
+Route::get('/greeting/{name}/{nickname}', 'WelcomeUserController@index1')
+    ->name('users.namecomplete');
 
-Route::get('/greeting/{name}', 'WelcomeUserController@index2');
+Route::get('/greeting/{name}', 'WelcomeUserController@index2')
+    ->name('users.name');
 
 
