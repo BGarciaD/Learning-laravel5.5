@@ -306,6 +306,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>href="{{ url("/users/$user->id") }}" => We can also use double quotation marks but in this case we don't need to concatenate he user's id</li>
         <li>href="{{url()->previous()}}" => We can also use the method previous() to return to the previous page</li>
         <li>href="{{ action('UserController@index') }}" => We can also use the action helper to redirect to an specific page of our web using the controller and the method names as arguments</li>
+        <li>href="{{ action('UserController@showUserDetails', [ 'id' => $user->id]) }}" => In order to pass a parameter with the action helper we can use an associative array</li>
     </ul>
 </div>
 
