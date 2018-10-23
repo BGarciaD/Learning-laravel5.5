@@ -13,7 +13,7 @@
             <p>No data available</p>
         @endif  
         <p>
-            <a href="{{url('/users')}}">Regresar</a>
+            <a href="{{ route('users.index') }}">Regresar</a>
         </p>
 @endsection
 
