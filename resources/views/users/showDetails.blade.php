@@ -12,6 +12,9 @@
         @else
             <p>No data available</p>
         @endif  
+        <p>
+            <a href="{{url('/users')}}">Regresar</a>
+        </p>
 @endsection
 
 @section('sidebar')
