@@ -303,6 +303,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     <h5>Generating URL's in Laravel</h5>
     <ul>
         <li>href="{{ url('/users/' . $user->id) }}" => With the Laravel helper url we can create links to different parts of our web</li>
+        <li>href="{{ url("/users/$user->id") }}" => We can also use double quotation marks but in this case we don't need to concatenate he user's id</li>
     </ul>
 </div>
 
