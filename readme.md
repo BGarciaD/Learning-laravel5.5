@@ -312,5 +312,13 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     </ul>
 </div>
 
+##Lesson 24
+
+<div>
+    <h5>Handling Errors</h5>
+    <ul>
+        <li>response()->view('viewname, [data], 404') => Command to specify the code of the error to the view in order to pass the test</li>
+    </ul>
+
 ## How to use Phpmyadmin in a remote computer
 https://stackoverflow.com/questions/16801573/how-to-access-remote-server-with-local-phpmyadmin-client

@@ -39,6 +39,9 @@ class UserController extends Controller
     public function showUserDetails($id)
     {
         $user = User::find($id);
+        if ($user == null){
+            return reponse()->view('error.404', [], 404);
+        }
         return view('users.showDetails', compact('user'));
     }
 

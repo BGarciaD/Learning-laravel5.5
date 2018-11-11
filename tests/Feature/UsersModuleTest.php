@@ -84,4 +84,11 @@ class UsersModuleTest extends TestCase
             ->assertSee('Name:')
             ->assertSee('Max');
     }
+
+    function error_404_no_user_found()
+    {
+        $this->get('/users/999')
+            ->assertStatus(404)
+            ->assertSee('Page not found');
+    }
 }
