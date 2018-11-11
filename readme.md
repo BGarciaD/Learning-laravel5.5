@@ -318,6 +318,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     <h5>Handling Errors</h5>
     <ul>
         <li>response()->view('viewname, [data], 404') => Command to specify the code of the error to the view in order to pass the test</li>
+        <li>Model::findOrFail($id) => This method searches for the specified register and If it doesn't find it it will display a custome laravel error message. But If you have a folder called errors and inside a file called 404 it will display this one</li>
     </ul>
 
 ## How to use Phpmyadmin in a remote computer
