@@ -321,5 +321,14 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>Model::findOrFail($id) => This method searches for the specified register and If it doesn't find it it will display a custome laravel error message. But If you have a folder called errors and inside a file called 404 it will display this one</li>
     </ul>
 
+##Lesson 25
+
+<div>
+    <h5>Implicit Route Model Binding</h5>
+    <ul>
+        <li>Route::get('/route/{modelName}', 'Controller@action') => We can bind a route with an Eloquent model like this. Instead of writing the name of the variable in the action of the controller we write the name of the model</li>
+        <li>public function actionName(modelName $modelName) => Now in the controller we recieve an object of that model. Keep in mind that Laravel will assume the primary key so we'll have to pass it through the URL</li>
+    </ul>
+
 ## How to use Phpmyadmin in a remote computer
 https://stackoverflow.com/questions/16801573/how-to-access-remote-server-with-local-phpmyadmin-client
