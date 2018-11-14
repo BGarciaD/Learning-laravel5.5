@@ -9,7 +9,21 @@
     </head>
     <body>
         <div class="container">
-            <h1 class="text-center">Error Page not Found</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <h1>404</h1>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <img src="/images/obiwankenobi.JPG" alt="ObiWanKenobi" style="width: 350px; height: 450px;">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <h1>This is not the page you are looking for</h1>
+                </div>
+            </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
