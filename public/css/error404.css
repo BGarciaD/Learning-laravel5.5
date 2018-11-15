@@ -1,0 +1,17 @@
+html {
+    background-color: black;
+}
+
+.container {
+    background-image: url("/images/stars.JPG");
+    height: 100%;
+}
+
+.container h1 {
+    color: cornflowerblue;
+    font-size: 5.9vw;
+}
+
+.container p {
+    color: cornflowerblue;
+}

@@ -1,11 +1,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-        
+        <link rel="stylesheet" href="/css/error404.css">
     </head>
     <body>
         <div class="container">
@@ -21,7 +21,12 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-auto">
-                    <h1>This is not the page you are looking for</h1>
+                    <p>¡¡¡This is not the page you are looking for!!!</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <a href="{{ route('home') }}">Home</a>
                 </div>
             </div>
         </div>
