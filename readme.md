@@ -330,5 +330,13 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>public function actionName(modelName $modelName) => Now in the controller we recieve an object of that model. Keep in mind that Laravel will assume the primary key so we'll have to pass it through the URL</li>
     </ul>
 
+##Lesson 26
+
+<div>
+    <h5>POST routes and protection against CSRF attacks</h5>
+    <ul>
+        <li>Route::post() => We've been using GET method to get and display information. But now we want to store data in the DB so we use the POST method to send the data</li>
+    </ul>
+
 ## How to use Phpmyadmin in a remote computer
 https://stackoverflow.com/questions/16801573/how-to-access-remote-server-with-local-phpmyadmin-client

@@ -47,6 +47,11 @@ class UserController extends Controller
         return view('users.create', compact('user'));
     }
 
+    public function storeUser()
+    {
+        return 'Processing data';
+    }
+
     public function edit($id)
     {
         //Normally you'd get data from DB by ID

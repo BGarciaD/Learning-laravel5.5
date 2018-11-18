@@ -25,6 +25,9 @@ Route::get('/users/{user}', 'UserController@showUserDetails')->where('id', '\d+'
 Route::get('/users/new', 'UserController@createUser')
     ->name('users.create');
 
+Route::post('/users/create', 'UserController@storeUser')
+    ->name('users.store');
+
 Route::get('/users/{id}/edit', 'UserController@edit')->where('id', '\d+')
     ->name('users.edit');
 
