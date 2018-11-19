@@ -43,8 +43,7 @@ class UserController extends Controller
 
     public function createUser()
     {
-        $user = array("id" => "5", "name" => "Max", "lastName" => "Power", "age" => "45", "height" => '1,75m', "city" => "Springfield" );
-        return view('users.create', compact('user'));
+        return view('users.create');
     }
 
     public function storeUser()
