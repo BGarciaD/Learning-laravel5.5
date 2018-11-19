@@ -5,7 +5,8 @@
 @section('content')
     <h1>Create user</h1>
 
-    <form method="POST" action="{{ url('/users/create') }}">
+    <form method="POST" action="{{ url('/users/new') }}">
+        {{ csrf_field() }}
         <button type="submit">Create User</button>
     </form>
     

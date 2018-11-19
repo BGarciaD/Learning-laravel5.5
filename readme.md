@@ -336,6 +336,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     <h5>POST routes and protection against CSRF attacks</h5>
     <ul>
         <li>Route::post() => We've been using GET method to get and display information. But now we want to store data in the DB so we use the POST method to send the data</li>
+        <li>{{ csrf_field()}} => This method used inside a form will display an invisible input with the token needed to do post request. This is important because Laravel doesn't allow to do post requests just with the url in order to protect the application from csrf attacks</li>
+        <li>Route::get('/route/test'); Route::post('/route/test') => We can use two routes with the mase URL but different method</li>
     </ul>
 
 ## How to use Phpmyadmin in a remote computer
