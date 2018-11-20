@@ -63,12 +63,32 @@ class UsersModuleTest extends TestCase
      * @test
      * @return void
      */
-    function newUser()
+    function newUserForm()
     {
         $this->get('/users/new')
             ->assertStatus(200)
             ->assertSee('Create User')
             ->assertSee('Return to user\'s list');
+    }
+
+    /**
+     * @test
+     * @return void
+     */
+    function createUser()
+    {
+        //$this->withoutExceptionHandling(); Method to disable handling exceptions and showing to the user
+
+        $this->post('/users/new', [
+            'name' => 'Tomás Turbado',
+            'email' => 'tomasturbado@gmail.com',
+            'password' => '123456'
+        ])->assertSee('Processing data...');
+
+        $this->assertDatabaseHas('users', [
+            'name' => 'Tomás Turbado',
+            'email' => 'tomasturbado@gmail.com'
+        ]);
     }
 
     /**
@@ -95,10 +115,4 @@ class UsersModuleTest extends TestCase
             ->assertStatus(404)
             ->assertSee('¡¡¡This is not the page you are looking for!!!');
     }
-
-    /**
-     * @test
-     * @return void
-     */
-    
 }

@@ -340,5 +340,14 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>Route::get('/route/test'); Route::post('/route/test') => We can use two routes with the mase URL but different method</li>
     </ul>
 
+##Lesson 27
+
+<div>
+    <h5>Creating records with Laravel and TDD</h5>
+    <ul>
+        <li>$this->post('route', [data]) => With this method we can simulate POST requests</li>
+        <li>->assertDatabaseHas('Model', [data]) => With this method we can check If a record exists or not in our DB</li>
+    </ul>
+
 ## How to use Phpmyadmin in a remote computer
 https://stackoverflow.com/questions/16801573/how-to-access-remote-server-with-local-phpmyadmin-client

@@ -48,7 +48,13 @@ class UserController extends Controller
 
     public function storeUser()
     {
-        return 'Processing data';
+        User::create([
+            'name' => 'Tomás Turbado',
+            'email' => 'tomasturbado@gmail.com',
+            'password' => bcrypt(123456)
+        ]);
+
+        return 'Processing data...';
     }
 
     public function edit($id)
