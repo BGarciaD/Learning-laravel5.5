@@ -347,6 +347,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     <ul>
         <li>$this->post('route', [data]) => With this method we can simulate POST requests</li>
         <li>->assertDatabaseHas('Model', [data]) => With this method we can check If a record exists or not in our DB</li>
+        <li>$request->all() => With request() method we can retrieve inputs sent with a POST method. With all() method we retrieve all input data</li>
     </ul>
 
 ## How to use Phpmyadmin in a remote computer
