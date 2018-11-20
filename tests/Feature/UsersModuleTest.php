@@ -67,8 +67,8 @@ class UsersModuleTest extends TestCase
     {
         $this->get('/users/new')
             ->assertStatus(200)
-            ->assertSee('User\'s Data')
-            ->assertSee('name : Max');
+            ->assertSee('Create User')
+            ->assertSee('Return to user\'s list');
     }
 
     /**
@@ -85,10 +85,20 @@ class UsersModuleTest extends TestCase
             ->assertSee('Max');
     }
 
+    /**
+     * @test
+     * @return void
+     */
     function error_404_no_user_found()
     {
         $this->get('/users/999')
             ->assertStatus(404)
-            ->assertSee('Page not found');
+            ->assertSee('¡¡¡This is not the page you are looking for!!!');
     }
+
+    /**
+     * @test
+     * @return void
+     */
+    
 }
