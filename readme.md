@@ -348,6 +348,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>$this->post('route', [data]) => With this method we can simulate POST requests</li>
         <li>->assertDatabaseHas('Model', [data]) => With this method we can check If a record exists or not in our DB</li>
         <li>$request->all() => With request() method we can retrieve inputs sent with a POST method. With all() method we retrieve all input data</li>
+        <li>redirect() => With redirect() method we can redirect to another route followed by route() method for example</li>
+        <li>->assertCredentials([data]) => With this method we can check fields like an encrypted password we wouldn't be able to check with ->assertDatabaseHas() just passing an array of data</li>
     </ul>
 
 ## How to use Phpmyadmin in a remote computer

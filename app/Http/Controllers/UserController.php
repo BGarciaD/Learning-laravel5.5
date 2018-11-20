@@ -56,7 +56,7 @@ class UserController extends Controller
             'password' => bcrypt($data['password'])
         ]);
 
-        return 'Processing data...';
+        return redirect()->route('users.index');
     }
 
     public function edit($id)

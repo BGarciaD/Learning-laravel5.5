@@ -83,11 +83,12 @@ class UsersModuleTest extends TestCase
             'name' => 'Tomás Turbado',
             'email' => 'tomasturbado@gmail.com',
             'password' => '123456'
-        ])->assertSee('Processing data...');
+        ])->assertRedirect(route('users.index'));
 
-        $this->assertDatabaseHas('users', [
+        $this->assertCredentials([
             'name' => 'Tomás Turbado',
-            'email' => 'tomasturbado@gmail.com'
+            'email' => 'tomasturbado@gmail.com',
+            'password' => '123456'
         ]);
     }
 
