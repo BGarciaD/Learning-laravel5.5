@@ -356,9 +356,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 <div>
     <h5>Desiging form to create users</h5>
-    <ul>
-        <li></li>
-    </ul>
 
 ## How to use Phpmyadmin in a remote computer
 https://stackoverflow.com/questions/16801573/how-to-access-remote-server-with-local-phpmyadmin-client
