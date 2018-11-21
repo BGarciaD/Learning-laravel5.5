@@ -352,5 +352,13 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>->assertCredentials([data]) => With this method we can check fields like an encrypted password we wouldn't be able to check with ->assertDatabaseHas() just passing an array of data</li>
     </ul>
 
+##Lesson 28
+
+<div>
+    <h5>Desiging form to create users</h5>
+    <ul>
+        <li></li>
+    </ul>
+
 ## How to use Phpmyadmin in a remote computer
 https://stackoverflow.com/questions/16801573/how-to-access-remote-server-with-local-phpmyadmin-client
