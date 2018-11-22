@@ -357,5 +357,13 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 <div>
     <h5>Desiging form to create users</h5>
 
+##Lesson 28
+
+<div>
+    <h5>Validating data from http requests and TDD</h5>
+    <ul>
+        <li>$this->assertDatabaseMissing('Model', [data]) => With this method we can look for an specific record and check If exists or not</li>
+    </ul>    
+
 ## How to use Phpmyadmin in a remote computer
 https://stackoverflow.com/questions/16801573/how-to-access-remote-server-with-local-phpmyadmin-client

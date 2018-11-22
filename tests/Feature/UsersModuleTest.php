@@ -15,7 +15,7 @@ class UsersModuleTest extends TestCase
      * @test
      * @return void
      */
-    function showingUsers()
+    function showing_users()
     {
         factory(User::class)->create([
             'name' => 'Tom'
@@ -36,7 +36,7 @@ class UsersModuleTest extends TestCase
      * @test
      * @return void
      */
-    function defaultMessageWhenNoUsers()
+    function default_message_When_no_users()
     {
         $this->get('/users')
             ->assertStatus(200)
@@ -47,7 +47,7 @@ class UsersModuleTest extends TestCase
      * @test
      * @return void
      */
-    function usersDetails()
+    function user_details()
     {
         $user = factory(USer::class)->create ([
             'name' => 'Perico de los Palotes'
@@ -63,7 +63,7 @@ class UsersModuleTest extends TestCase
      * @test
      * @return void
      */
-    function newUserForm()
+    function new_user_form()
     {
         $this->get('/users/new')
             ->assertStatus(200)
@@ -75,7 +75,7 @@ class UsersModuleTest extends TestCase
      * @test
      * @return void
      */
-    function createUser()
+    function create_user()
     {
         //$this->withoutExceptionHandling(); Method to disable handling exceptions and showing to the user
 
@@ -96,7 +96,27 @@ class UsersModuleTest extends TestCase
      * @test
      * @return void
      */
-    function editUser()
+    function validate_new_user_name_required()
+    {
+        $this->withoutExceptionHandling();
+        $this->post('/users/new', [
+            'name' => '',
+            'email' => 'tomasturbado@gmail.com',
+            'password' => '123456'
+        ]);
+        /*->assertRedirect(route('users.index'))
+            ->assertSessionHasErrors(['name']);*/
+
+        $this->assertDatabaseMissing('users', [
+            'email' => 'tomasturbado@gmail.com',
+        ]);
+    }
+
+    /**
+     * @test
+     * @return void
+     */
+    function edit_user()
     {
         $this->get('/users/5/edit')
             ->assertStatus(200)

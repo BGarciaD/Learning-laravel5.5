@@ -49,6 +49,10 @@ class UserController extends Controller
     public function storeUser()
     {
         $data = request()->all();
+
+        if(empty($data['name'])){
+            return;
+        }
         
         User::create([
             'name' => $data['name'],
