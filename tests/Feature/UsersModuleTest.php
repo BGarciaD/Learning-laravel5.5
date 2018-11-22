@@ -98,17 +98,20 @@ class UsersModuleTest extends TestCase
      */
     function validate_new_user_name_required()
     {
-        $this->withoutExceptionHandling();
-        $this->post('/users/new', [
-            'name' => '',
-            'email' => 'tomasturbado@gmail.com',
-            'password' => '123456'
-        ])->assertRedirect(route('users.create'))
-            ->assertSessionHasErrors(['name']);
+        //$this->withoutExceptionHandling();
+        $this->from('users/new')
+            ->post('/users/new', [
+                'name' => '',
+                'email' => 'tomasturbado@gmail.com',
+                'password' => '123456'
+            ])->assertRedirect('users/new')
+                ->assertSessionHasErrors(['name' => 'El campo nombre es obligatorio']);
 
         $this->assertDatabaseMissing('users', [
             'email' => 'tomasturbado@gmail.com',
         ]);
+
+        $this->assertEquals(0, User::count()); //Another way to test the user was not created
     }
 
     /**

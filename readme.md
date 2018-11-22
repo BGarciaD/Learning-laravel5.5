@@ -366,6 +366,9 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>assertSessionHasErrors(['error_name']) => This method expects a field with the name specified in the list of errors </li>
         <li>assertSessionHasErrors(['error_name' => 'some_message']) => Same method but specifying the message it should recieve</li>
         <li>->withErrors(['error_name' => 'error_message']) => Method to send an array of errors when redirecting</li>
+        <li>->validate(['field_name' => 'validation_rules']) => Method to validate post fields assinging validation rules</li>
+        <li>->validate(['field_name' => 'validation_rules'], ]['field_name.rule_name' => 'message']) => Same method but including a response message</li>
+        <li>->assertEquals(0, Model::count()) => Method to check if an specified value matches with a database query</li>
     </ul>    
 
 ## How to use Phpmyadmin in a remote computer
