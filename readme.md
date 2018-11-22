@@ -363,6 +363,9 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     <h5>Validating data from http requests and TDD</h5>
     <ul>
         <li>$this->assertDatabaseMissing('Model', [data]) => With this method we can look for an specific record and check If exists or not</li>
+        <li>assertSessionHasErrors(['error_name']) => This method expects a field with the name specified in the list of errors </li>
+        <li>assertSessionHasErrors(['error_name' => 'some_message']) => Same method but specifying the message it should recieve</li>
+        <li>->withErrors(['error_name' => 'error_message']) => Method to send an array of errors when redirecting</li>
     </ul>    
 
 ## How to use Phpmyadmin in a remote computer

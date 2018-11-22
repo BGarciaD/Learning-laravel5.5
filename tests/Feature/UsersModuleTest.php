@@ -103,9 +103,8 @@ class UsersModuleTest extends TestCase
             'name' => '',
             'email' => 'tomasturbado@gmail.com',
             'password' => '123456'
-        ]);
-        /*->assertRedirect(route('users.index'))
-            ->assertSessionHasErrors(['name']);*/
+        ])->assertRedirect(route('users.create'))
+            ->assertSessionHasErrors(['name']);
 
         $this->assertDatabaseMissing('users', [
             'email' => 'tomasturbado@gmail.com',
