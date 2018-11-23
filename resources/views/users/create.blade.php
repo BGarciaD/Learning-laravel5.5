@@ -9,12 +9,7 @@
        
             @if($errors->any())
                 <div class="alert alert-danger">
-                    <h6>¡¡Ooops...There's some errors!!!</h6>
-                    <ul>
-                        @foreach($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
+                    <h6>¡¡Ooops...!!!</h6>
                 </div>
             @endif
         <form method="POST" action="{{ url('/users/new') }}">
@@ -27,6 +22,9 @@
             <div class="row justify-content-center">
                     <div class="col-md">
                         <input type="text" name="name" id="name" placeholder="Alberto García" value="{{ old('name') }}">
+                        @if($errors->has('name'))
+                            <p class="alert alert-danger">{{ $errors->first('name') }}</p>
+                        @endif
                     </div>
                 </div>
             <div class="row justify-content-center">
@@ -36,7 +34,10 @@
             </div>
             <div class="row justify-content-center">
                     <div class="col-md">
-                        <input type="email" name="email" id="email" placeholder="albertogarcia@gmail.com" value="{{ old('email') }}">
+                        <input type="email" name="email" id="email" placeholder="albertog@example.com" value="{{ old('email') }}">
+                        @if($errors->has('email'))
+                            <p class="alert alert-danger">{{ $errors->first('email') }}</p>
+                        @endif
                     </div>
                 </div>
             <div class="row justify-content-center">
@@ -47,6 +48,9 @@
             <div class="row justify-content-center">
                     <div class="col-md">
                         <input type="password" name="password" id="password" placeholder="123456">
+                        @if($errors->has('password'))
+                            <p class="alert alert-danger">{{ $errors->first('password') }}</p>
+                        @endif
                     </div>
                 </div>
             <div class="row justify-content-center">
