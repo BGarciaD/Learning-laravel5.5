@@ -26,7 +26,7 @@
             </div>
             <div class="row justify-content-center">
                     <div class="col-md">
-                        <input type="text" name="name" id="name" placeholder="Alberto García">
+                        <input type="text" name="name" id="name" placeholder="Alberto García" value="{{ old('name') }}">
                     </div>
                 </div>
             <div class="row justify-content-center">
@@ -36,7 +36,7 @@
             </div>
             <div class="row justify-content-center">
                     <div class="col-md">
-                        <input type="email" name="email" id="email" placeholder="albertogarcia@gmail.com">
+                        <input type="email" name="email" id="email" placeholder="albertogarcia@gmail.com" value="{{ old('email') }}">
                     </div>
                 </div>
             <div class="row justify-content-center">

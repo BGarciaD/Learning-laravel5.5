@@ -377,7 +377,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     <h5>Creating records with Laravel and TDD</h5>
     <ul>
         <li>$errors => Variable that contains the errors</li>
-        <li>$errors->any() => With any() method we can get all errors</li>  
+        <li>$errors->any() => With any() method we can get all errors</li>
+        <li>old('field_name') => The old method will pull the previously flashed input data from the session</li>
     </ul>  
 
 ## How to use Phpmyadmin in a remote computer
