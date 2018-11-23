@@ -6,9 +6,17 @@
     <h1>Create user</h1>
 
     <div class="container">
-        @if($errors->any())
-            <p>Hay errores</p>
-        @endif
+       
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <h6>¡¡Ooops...There's some errors!!!</h6>
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         <form method="POST" action="{{ url('/users/new') }}">
             {{ csrf_field() }}
              <div class="row justify-content-center">

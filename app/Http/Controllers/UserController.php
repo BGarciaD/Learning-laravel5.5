@@ -51,7 +51,7 @@ class UserController extends Controller
         $data = request()->validate([
             'name' => 'required'
         ], [
-            'name.required' => 'El campo nombre es obligatorio'
+            'name.required' => 'The name is mandatory'
         ]);
 
         User::create([

@@ -376,7 +376,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 <div>
     <h5>Creating records with Laravel and TDD</h5>
     <ul>
-        <li>$errors->() => Variable that contains the errors</li>
+        <li>$errors => Variable that contains the errors</li>
+        <li>$errors->any() => With any() method we can get all errors</li>  
     </ul>  
 
 ## How to use Phpmyadmin in a remote computer
