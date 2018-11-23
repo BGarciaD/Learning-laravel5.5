@@ -5,10 +5,13 @@
 @section('content')
     <h1>Create user</h1>
 
-    <form method="POST" action="{{ url('/users/new') }}">
-        {{ csrf_field() }}
-        <div class="container">
-            <div class="row justify-content-center">
+    <div class="container">
+        @if($errors->any())
+            <p>Hay errores</p>
+        @endif
+        <form method="POST" action="{{ url('/users/new') }}">
+            {{ csrf_field() }}
+             <div class="row justify-content-center">
                 <div class="col-md">
                     <label for="name">Name</label>
                 </div>
@@ -43,8 +46,8 @@
                     <button type="submit">Create User</button>
                 </div>
             </div>
-        </div>
     </form>
+</div>
     
     <a href="{{ route('users.index') }}">Return to user's list</a>
 @endsection

@@ -357,7 +357,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 <div>
     <h5>Desiging form to create users</h5>
 
-##Lesson 28
+##Lesson 29
 
 <div>
     <h5>Validating data from http requests and TDD</h5>
@@ -369,7 +369,15 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>->validate(['field_name' => 'validation_rules']) => Method to validate post fields assinging validation rules</li>
         <li>->validate(['field_name' => 'validation_rules'], ]['field_name.rule_name' => 'message']) => Same method but including a response message</li>
         <li>->assertEquals(0, Model::count()) => Method to check if an specified value matches with a database query</li>
-    </ul>    
+    </ul>  
+
+##Lesson 30
+
+<div>
+    <h5>Creating records with Laravel and TDD</h5>
+    <ul>
+        <li>$errors->() => Variable that contains the errors</li>
+    </ul>  
 
 ## How to use Phpmyadmin in a remote computer
 https://stackoverflow.com/questions/16801573/how-to-access-remote-server-with-local-phpmyadmin-client

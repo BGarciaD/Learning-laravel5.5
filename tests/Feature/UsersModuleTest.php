@@ -77,7 +77,7 @@ class UsersModuleTest extends TestCase
      */
     function create_user()
     {
-        //$this->withoutExceptionHandling(); Method to disable handling exceptions and showing to the user
+        $this->withoutExceptionHandling(); //Method to disable handling exceptions and showing to the user
 
         $this->post('/users/new', [
             'name' => 'Tomás Turbado',
