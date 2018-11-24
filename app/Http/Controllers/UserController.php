@@ -50,12 +50,13 @@ class UserController extends Controller
     {
         $data = request()->validate([
             'name' => 'required',
-            'email' => 'required|unique:users,email',
+            'email' => ['required','unique:users,email','email'],
             'password' => 'required|min:6'
         ], [
             'name.required' => 'The name is required',
             'email.required' => 'The email is required',
             'email.unique' => 'The email already exists',
+            'email.email' => 'The email is not valid',
             'password.required' => 'The password is required',
             'password.min' => 'The minimal password\'s length is 6' 
         ]);

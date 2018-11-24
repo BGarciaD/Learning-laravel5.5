@@ -138,19 +138,44 @@ class UsersModuleTest extends TestCase
      * @test
      * @return void
      */
-    function validate_new_user_email_unique()
+    function validate_new_user_email_must_be_valid()
     {
-        $this->withoutExceptionHandling();
+        //$this->withoutExceptionHandling();
         $this->from('users/new')
             ->post('/users/new', [
                 'name' => 'Pepe Paco',
-                'email' => 'estella30@example.org',
+                'email' => 'correo-no-deseado',
                 'password' => '123456'
             ])->assertRedirect('users/new')
-                ->assertSessionHasErrors(['email' => 'The email already exists']);
+                ->assertSessionHasErrors(['email' => 'The email is not valid']);
 
         $this->assertDatabaseMissing('users', [
             'name' => 'Pepe Paco',
+        ]);
+    }
+
+    /**
+     * @test
+     * @return void
+     */
+    function validate_new_user_email_unique()
+    {
+        //$this->withoutExceptionHandling();
+        
+        factory(User::class)->create([
+            'email' => 'estella30@example.org'
+        ]);
+        
+        $this->from('users/new')
+            ->post('/users/new', [
+                'name' => 'Paco Pepe',
+                'email' => 'estella30@example.org',
+                'password' => '123456'
+            ])->assertRedirect('/users/new')
+                ->assertSessionHasErrors(['email' => 'The email already exists']);
+
+        $this->assertDatabaseMissing('users', [
+            'name' => 'Paco Pepe',
         ]);
     }
 

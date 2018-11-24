@@ -380,6 +380,14 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>$errors->any() => With any() method we can get all errors</li>
         <li>old('field_name') => The old method will pull the previously flashed input data from the session</li>
         <li>required => Rule that makes a field mandatory</li>
+    </ul>
+
+##Lesson 31
+
+<div>
+    <h5>Using multiple validation rules</h5>
+    <ul>
+        <li>['rule', 'rule', 'rule'] => We can set several validation rules with an array</li>
         <li>unique => Rule that makes a field unique. Non repeteable</li>
         <li>min => Rule to specify the minimal length for a field</li>
     </ul>  
