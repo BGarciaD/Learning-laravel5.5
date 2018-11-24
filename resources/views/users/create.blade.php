@@ -14,52 +14,33 @@
             @endif
         <form method="POST" action="{{ url('/users/new') }}">
             {{ csrf_field() }}
-             <div class="row justify-content-center">
-                <div class="col-md">
-                    <label for="name">Name</label>
-                </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Alberto García" value="{{ old('name') }}">
+                @if($errors->has('name'))
+                    <p class="alert alert-danger">{{ $errors->first('name') }}</p>
+                @endif
             </div>
-            <div class="row justify-content-center">
-                    <div class="col-md">
-                        <input type="text" name="name" id="name" placeholder="Alberto García" value="{{ old('name') }}">
-                        @if($errors->has('name'))
-                            <p class="alert alert-danger">{{ $errors->first('name') }}</p>
-                        @endif
-                    </div>
-                </div>
-            <div class="row justify-content-center">
-                <div class="col-md">
-                    <label for="email">Email</label>
-                </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="albertog@example.com" value="{{ old('email') }}">
+                @if($errors->has('email'))
+                    <p class="alert alert-danger">{{ $errors->first('email') }}</p>
+                @endif
             </div>
-            <div class="row justify-content-center">
-                    <div class="col-md">
-                        <input type="email" name="email" id="email" placeholder="albertog@example.com" value="{{ old('email') }}">
-                        @if($errors->has('email'))
-                            <p class="alert alert-danger">{{ $errors->first('email') }}</p>
-                        @endif
-                    </div>
-                </div>
-            <div class="row justify-content-center">
-                <div class="col-md">
-                    <label for="password">Password</label>
-                </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="123456">
+                @if($errors->has('password'))
+                    <p class="alert alert-danger">{{ $errors->first('password') }}</p>
+                @endif
             </div>
-            <div class="row justify-content-center">
-                    <div class="col-md">
-                        <input type="password" name="password" id="password" placeholder="123456">
-                        @if($errors->has('password'))
-                            <p class="alert alert-danger">{{ $errors->first('password') }}</p>
-                        @endif
-                    </div>
-                </div>
-            <div class="row justify-content-center">
-                <div class="col-md">
-                    <button type="submit">Create User</button>
-                </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Create User</button>
+            </div>
+            <div class="form-group">
+                <a class="btn btn-*" href="{{ route('users.index') }}">Return to user's list</a>
             </div>
     </form>
 </div>
-    
-    <a href="{{ route('users.index') }}">Return to user's list</a>
 @endsection

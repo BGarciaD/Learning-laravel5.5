@@ -105,13 +105,93 @@ class UsersModuleTest extends TestCase
                 'email' => 'tomasturbado@gmail.com',
                 'password' => '123456'
             ])->assertRedirect('users/new')
-                ->assertSessionHasErrors(['name' => 'El campo nombre es obligatorio']);
+                ->assertSessionHasErrors(['name' => 'The name is required']);
 
         $this->assertDatabaseMissing('users', [
             'email' => 'tomasturbado@gmail.com',
         ]);
 
         $this->assertEquals(0, User::count()); //Another way to test the user was not created
+    }
+
+    /**
+     * @test
+     * @return void
+     */
+    function validate_new_user_email_required()
+    {
+        //$this->withoutExceptionHandling();
+        $this->from('users/new')
+            ->post('/users/new', [
+                'name' => 'Pepe Paco',
+                'email' => '',
+                'password' => '123456'
+            ])->assertRedirect('users/new')
+                ->assertSessionHasErrors(['email' => 'The email is required']);
+
+        $this->assertDatabaseMissing('users', [
+            'name' => 'Pepe Paco',
+        ]);
+    }
+
+    /**
+     * @test
+     * @return void
+     */
+    function validate_new_user_email_unique()
+    {
+        $this->withoutExceptionHandling();
+        $this->from('users/new')
+            ->post('/users/new', [
+                'name' => 'Pepe Paco',
+                'email' => 'estella30@example.org',
+                'password' => '123456'
+            ])->assertRedirect('users/new')
+                ->assertSessionHasErrors(['email' => 'The email already exists']);
+
+        $this->assertDatabaseMissing('users', [
+            'name' => 'Pepe Paco',
+        ]);
+    }
+
+    /**
+     * @test
+     * @return void
+     */
+    function validate_new_user_password_length()
+    {
+        //$this->withoutExceptionHandling();
+        $this->from('users/new')
+            ->post('/users/new', [
+                'name' => 'Pepe Paco',
+                'email' => 'alberto@example.com',
+                'password' => '12345'
+            ])->assertRedirect('users/new')
+                ->assertSessionHasErrors(['password' => 'The minimal password\'s length is 6']);
+
+        $this->assertDatabaseMissing('users', [
+            'name' => 'Pepe Paco',
+        ]);
+    }
+
+    /**
+     * @test
+     * @return void
+     */
+    function validate_new_user_password_required()
+    {
+        //$this->withoutExceptionHandling();
+        $this->from('users/new')
+            ->post('/users/new', [
+                'name' => 'Pepe Paco',
+                'email' => 'pepe@example.com',
+                'password' => ''
+            ])->assertRedirect('users/new')
+                ->assertSessionHasErrors(['password' => 'The password is required']);
+
+        $this->assertDatabaseMissing('users', [
+            'name' => 'Pepe Paco',
+        ]);
     }
 
     /**

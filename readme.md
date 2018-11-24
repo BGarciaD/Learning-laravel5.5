@@ -379,6 +379,9 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>$errors => Variable that contains the errors</li>
         <li>$errors->any() => With any() method we can get all errors</li>
         <li>old('field_name') => The old method will pull the previously flashed input data from the session</li>
+        <li>required => Rule that makes a field mandatory</li>
+        <li>unique => Rule that makes a field unique. Non repeteable</li>
+        <li>min => Rule to specify the minimal length for a field</li>
     </ul>  
 
 ## How to use Phpmyadmin in a remote computer
