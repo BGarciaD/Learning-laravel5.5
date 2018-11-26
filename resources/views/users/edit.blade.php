@@ -1,38 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Editing User</title>
-</head>
-<body>
-    <h1>Editing User</h1>
-    <form action="" method="POST">
-        <fieldset>
-            <legend>User's Data</legend>
-            <label for="userName">Name:</br>
-                <input type="text" name="name" id="userName" value="{{ $user['name'] }}">
-            </label>
-        </br>
-        <label for="userLastName">Last Name:</br>
-            <input type="text" name="lastName" id="userLastName" value="{{ $user['lastName'] }}">
-        </label>
-        </br>
-        <label for="userAge">Age:</br>
-            <input type="text" name="age" id="userAge" value="{{ $user['age'] }}">
-        </label>
-        </br>
-        <label for="userHeight">Height:</br>
-            <input type="text" name="height" id="userHeight" value="{{ $user['height'] }}">
-        </label>
-        </br>
-        <label for="userCity">City:</br>
-            <input type="text" name="city" id="userCity" value="{{ $user['city'] }}">
-        </label>
-        <br>
-        <input type="submit" value="Edit">
-        </fieldset>
+@extends('layout')
+
+@section('title', "Create User")
+
+@section('content')
+    <h1>Edit User</h1>
+
+    <div class="container">
+       
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <h6>¡¡Ooops...!!!</h6>
+                </div>
+            @endif
+        <form method="POST" action="{{ url('/users/new') }}">
+            {{ csrf_field() }}
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Alberto García" value="{{ old('name', $user->name) }}">
+                @if($errors->has('name'))
+                    <p class="alert alert-danger">{{ $errors->first('name') }}</p>
+                @endif
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="albertog@example.com" value="{{ old('email', $user->email) }}">
+                @if($errors->has('email'))
+                    <p class="alert alert-danger">{{ $errors->first('email') }}</p>
+                @endif
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="123456">
+                @if($errors->has('password'))
+                    <p class="alert alert-danger">{{ $errors->first('password', $user->password) }}</p>
+                @endif
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+            <div class="form-group">
+                <a class="btn btn-*" href="{{ route('users.index') }}">Return to user's list</a>
+            </div>
     </form>
-</body>
-</html>
+</div>
+@endsection
