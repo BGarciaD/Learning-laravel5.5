@@ -240,6 +240,28 @@ class UsersModuleTest extends TestCase
      * @test
      * @return void
      */
+    function update_user()
+    {
+        $this->withoutExceptionHandling(); //Method to disable handling exceptions and showing to the user
+        $user = factory(User::class)->create();
+
+        $this->put("/users/$user->id/edit", [
+            'name' => 'Wladimiro Baesterillas',
+            'email' => 'wladimiro@gmail.com',
+            'password' => '123456'
+        ])->assertRedirect(route('users.index'));
+
+        $this->assertCredentials([
+            'name' => 'Wladimiro Baesterillas',
+            'email' => 'wladimiro@gmail.com',
+            'password' => '123456'
+        ]);
+    }
+
+    /**
+     * @test
+     * @return void
+     */
     function error_404_no_user_found()
     {
         $this->get('/users/999')

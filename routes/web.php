@@ -31,6 +31,9 @@ Route::post('/users/new', 'UserController@storeUser')
 Route::get('/users/{user}/edit', 'UserController@edit')->where('id', '\d+')
     ->name('users.edit');
 
+Route::put('/users/{user}/edit', 'UserController@update')->where('id', '\d+')
+    ->name('users.update');
+
 Route::get('/greeting/{name}/{nickname}', 'WelcomeUserController@index1')
     ->name('users.namecomplete');
 

@@ -395,11 +395,9 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ##Lesson 32
 
 <div>
-    <h5>Form to edit users's data</h5>
+    <h5>Updating users with laravel and TDD</h5>
     <ul>
-        <li>assertViewIs('view_name') => Method to check If we are getting the view we want</li>
-        <li>assertViewHas('variable_name') => Method to check If the view has recieved an specific variable</li>
-        <li>old('field_name', variable_attribute) => Second way to use the old method. In this case the second parameter points to a variable attribute just in case there's no previous value to recover</li>
+        <li>Route::put() => PUT method to update records</li>
     </ul>
 
 ## How to use Phpmyadmin in a remote computer
