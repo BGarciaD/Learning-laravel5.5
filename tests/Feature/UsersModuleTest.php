@@ -262,6 +262,29 @@ class UsersModuleTest extends TestCase
      * @test
      * @return void
      */
+    function validate_edit_user_name_required()
+    {
+        //$this->withoutExceptionHandling();
+        $user = factory(User::class)->create();
+        
+        $this->from("/users/$user->id/edit")
+            ->put("/users/$user->id/edit", [
+                'name' => '',
+                'email' => 'tomasturbado@gmail.com',
+                'password' => '123456'
+            ])
+            ->assertRedirect("/users/$user->id/edit")
+            ->assertSessionHasErrors(['name' => 'The name is required']);
+        
+            $this->assertDatabaseMissing('users', [
+            'email' => 'tomasturbado@gmail.com',
+        ]);
+    }
+
+    /**
+     * @test
+     * @return void
+     */
     function error_404_no_user_found()
     {
         $this->get('/users/999')

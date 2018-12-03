@@ -374,7 +374,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ##Lesson 30
 
 <div>
-    <h5>Creating records with Laravel and TDD</h5>
+    <h5>Display validation error messages</h5>
     <ul>
         <li>$errors => Variable that contains the errors</li>
         <li>$errors->any() => With any() method we can get all errors</li>
@@ -392,12 +392,20 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>min => Rule to specify the minimal length for a field</li>
     </ul>
 
-##Lesson 32
+##Lesson 33
 
 <div>
     <h5>Updating users with laravel and TDD</h5>
     <ul>
         <li>Route::put() => PUT method to update records</li>
+    </ul>
+
+##Lesson 34
+
+<div>
+    <h5>Validation Rules</h5>
+    <ul>
+        <li>Adding validation rules when editting users</li>
     </ul>
 
 ## How to use Phpmyadmin in a remote computer
