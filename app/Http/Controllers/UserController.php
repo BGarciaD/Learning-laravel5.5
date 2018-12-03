@@ -79,11 +79,12 @@ class UserController extends Controller
     {
         $data = request()->validate([
             'name' => 'required',
-            'email' => 'required',
+            'email' => ['required', 'email'],
             'password' => ''
         ],  [
             'name.required' => 'The name is required',
             'email.required' => 'The email is required',
+            'email.email' => 'The email is not valid',
         ]);
         $data["password"] = bcrypt($data["password"]);
         $user->update($data);
