@@ -329,6 +329,30 @@ class UsersModuleTest extends TestCase
      * @test
      * @return void
      */
+    function validate_edit_user_email__must_be_unique()
+    {
+        //$this->withoutExceptionHandling();
+        $user = factory(User::class)->create([
+            'email' => 'estella30@example.org'
+        ]);
+        //This test is incomplete because the user can't updated it's own email
+        $this->from("/users/$user->id/edit")
+            ->put("/users/$user->id/edit", [
+                'name' => 'Paco Pepe',
+                'email' => 'estella30@example.org',
+                'password' => '123456'
+            ])->assertRedirect("/users/$user->id/edit")
+                ->assertSessionHasErrors(['email' => 'The email already exists']);
+
+        $this->assertDatabaseMissing('users', [
+            'name' => 'Paco Pepe',
+        ]);
+    }
+
+    /**
+     * @test
+     * @return void
+     */
     function error_404_no_user_found()
     {
         $this->get('/users/999')
