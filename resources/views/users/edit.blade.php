@@ -12,9 +12,10 @@
                     <h6>¡¡Ooops...!!!</h6>
                 </div>
             @endif
-        <form method="POST" action="{{ url('/users/new') }}">
+        <form method="POST" action="{{ url("/users/$user->id/edit") }}">
+            {{ method_field('PUT') }}
             {{ csrf_field() }}
-            <div class="form-group">
+            <div class="form-SSgroup">
                 <label for="name">Name</label>
                 <input type="text" name="name" id="name" class="form-control" placeholder="Alberto García" value="{{ old('name', $user->name) }}">
                 @if($errors->has('name'))
@@ -32,7 +33,7 @@
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" class="form-control" placeholder="123456">
                 @if($errors->has('password'))
-                    <p class="alert alert-danger">{{ $errors->first('password', $user->password) }}</p>
+                    <p class="alert alert-danger">{{ $errors->first('password') }}</p>
                 @endif
             </div>
             <div class="form-group">

@@ -355,7 +355,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ##Lesson 28
 
 <div>
-    <h5>Desiging form to create users</h5>
+    <h5>Designing form to create users</h5>
 
 ##Lesson 29
 
@@ -406,7 +406,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     <h5>Validation Rules</h5>
     <ul>
         <li>Adding validation rules when editting users</li>
-        <li>self::MarkTestIncomplete(); => Method used to mark a test as incomplete. It must be followed by a return</li>    
+        <li>self::MarkTestIncomplete(); => Method used to mark a test as incomplete. It must be followed by a return</li>
+        <li>{{ method_field('PUT') }} => The method field of the form must be POST or GET but we can not user PUT so this is a Laravel method to send a PUT request</li> 
     </ul>
 
 ## How to use Phpmyadmin in a remote computer
