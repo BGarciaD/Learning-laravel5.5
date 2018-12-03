@@ -341,11 +341,34 @@ class UsersModuleTest extends TestCase
                 'name' => 'Paco Pepe',
                 'email' => 'estella30@example.org',
                 'password' => '123456'
-            ])->assertRedirect("/users/$user->id/edit")
-                ->assertSessionHasErrors(['email' => 'The email already exists']);
+            ])
+            ->assertRedirect("/users/$user->id/edit")
+            ->assertSessionHasErrors(['email' => 'The email already exists']);
 
         $this->assertDatabaseMissing('users', [
             'name' => 'Paco Pepe',
+        ]);
+    }
+
+    /**
+     * @test
+     * @return void
+     */
+    function validate_edit_user_password_required()
+    {
+        //$this->withoutExceptionHandling();
+        $user = factory(User::class)->create();
+        $this->from("/users/$user->id/edit")
+            ->put("/users/$user->id/edit", [
+                'name' => 'Pepe Paco',
+                'email' => 'pepe@example.com',
+                'password' => ''
+            ])
+            ->assertRedirect("/users/$user->id/edit")
+            ->assertSessionHasErrors(['password' => 'The password is required']);
+        
+                $this->assertDatabaseMissing('users', [
+            'name' => 'Pepe Paco',
         ]);
     }
 
