@@ -406,6 +406,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     <h5>Validation Rules</h5>
     <ul>
         <li>Adding validation rules when editting users</li>
+        <li>self::MarkTestIncomplete(); => Method used to mark a test as incomplete. It must be followed by a return</li>    
     </ul>
 
 ## How to use Phpmyadmin in a remote computer
