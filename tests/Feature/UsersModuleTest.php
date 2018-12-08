@@ -356,47 +356,29 @@ class UsersModuleTest extends TestCase
      * @test
      * @return void
      */
-    function validate_edit_user_password_required()
+    function validate_edit_user_password_is_optional()
     {
         //$this->withoutExceptionHandling();
-        $user = factory(User::class)->create();
+        $oldPassword = 'PREVIOUS_PASSWORD';
+        $user = factory(User::class)->create([
+            'password' => bcrypt($oldPassword)
+        ]);
         $this->from("/users/$user->id/edit")
             ->put("/users/$user->id/edit", [
                 'name' => 'Pepe Paco',
                 'email' => 'pepe@example.com',
                 'password' => ''
             ])
-            ->assertRedirect("/users/$user->id/edit")
-            ->assertSessionHasErrors(['password' => 'The password is required']);
-        
-                $this->assertDatabaseMissing('users', [
-            'name' => 'Pepe Paco',
-        ]);
-    }
-
-    /**
-     * @test
-     * @return void
-     */
-    function validate_edit_user_password_length()
-    {
-        //$this->withoutExceptionHandling();
-        $user = factory(User::class)->create();
-        $this->from("/users/$user->id/edit")
-            ->put("/users/$user->id/edit", [
+            ->assertRedirect("/users");
+            
+        $this->assertCredentials([
                 'name' => 'Pepe Paco',
-                'email' => 'alberto@example.com',
-                'password' => '12345'
-            ])
-            ->assertRedirect("/users/$user->id/edit")
-            ->assertSessionHasErrors(['password' => 'The minimal password\'s length is 6']);
-
-        $this->assertDatabaseMissing('users', [
-            'name' => 'Pepe Paco',
+                'email' => 'pepe@example.com',
+                'password' => $oldPassword
         ]);
     }
 
-    /**
+   /**
      * @test
      * @return void
      */

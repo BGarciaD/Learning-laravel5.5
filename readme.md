@@ -410,5 +410,13 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>{{ method_field('PUT') }} => The method field of the form must be POST or GET but we can not user PUT so this is a Laravel method to send a PUT request</li> 
     </ul>
 
+##Lesson 35
+
+<div>
+    <h5>Optional Field</h5>
+    <ul>
+        <li>unset(variable_name) => Destroy an specific variable</li>
+    </ul>
+
 ## How to use Phpmyadmin in a remote computer
 https://stackoverflow.com/questions/16801573/how-to-access-remote-server-with-local-phpmyadmin-client
