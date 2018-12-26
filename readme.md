@@ -418,5 +418,13 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>unset(variable_name) => Destroy an specific variable</li>
     </ul>
 
+##Lesson 36
+
+<div>
+    <h5>Email must be unique when editing</h5>
+    <ul>
+        <li>'unique:users,email,'.$user->id => Adding the user's id we can specify the record the rule will ignore in order to be able to update a user with the same email (being the email a unique field)</li>
+    </ul>
+
 ## How to use Phpmyadmin in a remote computer
 https://stackoverflow.com/questions/16801573/how-to-access-remote-server-with-local-phpmyadmin-client
