@@ -424,6 +424,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     <h5>Email must be unique when editing</h5>
     <ul>
         <li>'unique:users,email,'.$user->id => Adding the user's id we can specify the record the rule will ignore in order to be able to update a user with the same email (being the email a unique field)</li>
+        <li>Rule::unique('users')->ignore($user->id) => This is another way to specify a unique rule using the object Rule</li>
     </ul>
 
 ## How to use Phpmyadmin in a remote computer

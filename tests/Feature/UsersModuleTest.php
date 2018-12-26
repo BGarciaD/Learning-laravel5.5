@@ -379,7 +379,7 @@ class UsersModuleTest extends TestCase
      */
     function validate_edit_user_password_is_optional()
     {
-        //$this->withoutExceptionHandling();
+        $this->withoutExceptionHandling();
         $oldPassword = 'PREVIOUS_PASSWORD';
         $user = factory(User::class)->create([
             'password' => bcrypt($oldPassword)
