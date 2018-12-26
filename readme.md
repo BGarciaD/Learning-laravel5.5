@@ -427,5 +427,13 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         <li>Rule::unique('users')->ignore($user->id) => This is another way to specify a unique rule using the object Rule</li>
     </ul>
 
+##Lesson 37
+
+<div>
+    <h5>Delete records with Laravel and TDD</h5>
+    <ul>
+        <li>Route::delete('route', 'controller@method') => Http method used to delete records</li>
+    </ul>
+
 ## How to use Phpmyadmin in a remote computer
 https://stackoverflow.com/questions/16801573/how-to-access-remote-server-with-local-phpmyadmin-client

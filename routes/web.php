@@ -34,6 +34,9 @@ Route::get('/users/{user}/edit', 'UserController@edit')->where('id', '\d+')
 Route::put('/users/{user}/edit', 'UserController@update')->where('id', '\d+')
     ->name('users.update');
 
+Route::delete('/users/{user}', 'UserController@delete')->where('id', '\d+')
+    ->name('users.delete');
+
 Route::get('/greeting/{name}/{nickname}', 'WelcomeUserController@index1')
     ->name('users.namecomplete');
 

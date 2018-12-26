@@ -101,4 +101,10 @@ class UserController extends Controller
 
         return redirect(route('users.index'));
     }
+
+    public function delete(User $user)
+    {
+        $user->delete();
+        return redirect(route('users.index'));
+    }
 }
